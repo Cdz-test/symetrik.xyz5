@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symetrik.xyz - Transformez votre entreprise avec l'IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #7C3AED;
+            --accent: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .blur-load {
+            animation: blurFadeIn 1s ease-out forwards;
+        }
+        
+        @keyframes blurFadeIn {
+            0% { opacity: 0; filter: blur(20px); transform: scale(0.9); }
+            100% { opacity: 1; filter: blur(0); transform: scale(1); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+        
+        @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out forwards;
+        }
+        
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--accent);
+        }
+        
+        .progress-bar {
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+        
+        .blob-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary);
+            top: 10%;
+            left: -5%;
+            animation: moveBlob 20s infinite alternate;
+        }
+        
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background-color: var(--secondary);
+            bottom: 20%;
+            right: -10%;
+            animation: moveBlob 25s infinite alternate-reverse;
+        }
+        
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent);
+            top: 60%;
+            left: 20%;
+            animation: moveBlob 15s infinite alternate;
+        }
+        
+        @keyframes moveBlob {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(5%, 10%) rotate(120deg); }
+            66% { transform: translate(-10%, 5%) rotate(240deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        .counter-value {
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+    <meta name="description" content="Découvrez Symetrik.xyz">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="bg-gray-50">
+    <!-- Blobs d'arrière-plan -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 backdrop-blur-md shadow-md z-50 py-4">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-2">
+                    <span class="text-3xl font-extrabold gradient-text">Symetrik<span class="text-accent">.xyz</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="nav-link text-gray-700 hover:text-indigo-600 font-medium transition-all">Accueil</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-indigo-600 font-medium transition-all">Services</a>
+                    <a href="#pourquoi-nous" class="nav-link text-gray-700 hover:text-indigo-600 font-medium transition-all">Pourquoi Nous</a>
+                    <a href="#cas-clients" class="nav-link text-gray-700 hover:text-indigo-600 font-medium transition-all">Cas Clients</a>
+                    <a href="#tarifs" class="nav-link text-gray-700 hover:text-indigo-600 font-medium transition-all">Tarifs</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 font-medium transition-all">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="hidden md:inline-flex btn-primary text-white px-6 py-2 rounded-full font-semibold">
+                        Démarrer Maintenant
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Menu mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg p-4 absolute left-4 right-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#accueil" class="text-gray-700 hover:text-indigo-600 font-medium">Accueil</a>
+                    <a href="#services" class="text-gray-700 hover:text-indigo-600 font-medium">Services</a>
+                    <a href="#pourquoi-nous" class="text-gray-700 hover:text-indigo-600 font-medium">Pourquoi Nous</a>
+                    <a href="#cas-clients" class="text-gray-700 hover:text-indigo-600 font-medium">Cas Clients</a>
+                    <a href="#tarifs" class="text-gray-700 hover:text-indigo-600 font-medium">Tarifs</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
+                    <a href="#contact" class="btn-primary text-white text-center px-6 py-2 rounded-full font-semibold">
+                        Démarrer Maintenant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="slide-in-left">
+                    <div class="mb-6 inline-block rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-700">
+                        <i class="fas fa-star-of-life mr-2"></i>
+                        L'avenir de votre entreprise commence ici
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                        <span>Transformez votre entreprise avec </span>
+                        <span class="gradient-text">l'Intelligence Artificielle</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                        Chez Symetrik, nous vous aidons à exploiter la puissance de l'IA pour optimiser vos opérations, améliorer l'expérience client et stimuler votre croissance. Notre approche personnalisée garantit des solutions adaptées à vos besoins spécifiques.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-10">
+                        <a href="#contact" class="btn-primary text-white text-center px-8 py-4 rounded-full font-bold text-lg shadow-xl">
+                            <i class="fas fa-rocket mr-2"></i> Démarrer votre transformation
+                        </a>
+                        <a href="#demo" class="bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 text-center px-8 py-4 rounded-full font-bold text-lg transition-all">
+                            <i class="fas fa-play-circle mr-2"></i> Voir la démo
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex -space-x-2">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full border-2 border-white" alt="Client">
+                        </div>
+                        <div>
+                            <div class="flex items-center text-yellow-500 mb-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ml-2 text-gray-700 font-medium">4.9/5</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">Plus de <span class="font-bold">500</span> entreprises satisfaites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-in-right relative">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-indigo-600 rounded-3xl rotate-3 scale-105 opacity-20"></div>
+                        <div class="absolute inset-0 bg-purple-600 rounded-3xl -rotate-3 scale-105 opacity-20"></div>
+                        <div class="relative bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 floating">
+                            <img src="https://fakeimg.pl/600x400/4F46E5/FFFFFF?text=IA+Symetrik" class="w-full h-auto rounded-xl mb-6" alt="IA Symetrik Dashboard">
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="bg-indigo-50 p-4 rounded-xl">
+                                    <h3 class="font-bold text-indigo-800 mb-1">Efficacité</h3>
+                                    <div class="h-2 bg-gray-200 rounded-full">
+                                        <div class="h-2 bg-indigo-600 rounded-full progress-bar" style="width: 0%;" data-width="85%"></div>
+                                    </div>
+                                    <p class="text-right text-sm text-indigo-800 mt-1 counter" data-target="85">0%</p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-xl">
+                                    <h3 class="font-bold text-purple-800 mb-1">Précision</h3>
+                                    <div class="h-2 bg-gray-200 rounded-full">
+                                        <div class="h-2 bg-purple-600 rounded-full progress-bar" style="width: 0%;" data-width="92%"></div>
+                                    </div>
+                                    <p class="text-right text-sm text-purple-800 mt-1 counter" data-target="92">0%</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Productivité</h3>
+                                    <p class="text-gray-600">Augmentation moyenne</p>
+                                </div>
+                                <div class="text-3xl font-bold gradient-text counter" data-target="37">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 bg-yellow-400 text-black font-bold px-6 py-3 rounded-full shadow-lg pulse">
+                        Technologie 2025
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 fade-in-up">
+                <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+                    <img src="https://fakeimg.pl/200x80/cccccc/909090?text=Client+Logo" alt="Client Logo" class="h-12">
+                </div>
+                <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+                    <img src="https://fakeimg.pl/200x80/cccccc/909090?text=Client+Logo" alt="Client Logo" class="h-12">
+                </div>
+                <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+                    <img src="https://fakeimg.pl/200x80/cccccc/909090?text=Client+Logo" alt="Client Logo" class="h-12">
+                </div>
+                <div class="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
+                    <img src="https://fakeimg.pl/200x80/cccccc/909090?text=Client+Logo" alt="Client Logo" class="h-12">
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Nos Solutions <span class="gradient-text">d'Intelligence Artificielle</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez comment notre expertise en IA peut transformer chaque aspect de votre entreprise grâce à des solutions innovantes et sur mesure.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 feature-card card-hover">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-3xl text-indigo-600 feature-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">IA Analytique Prédictive</h3>
+                    <p class="text-gray-600 mb-6">
+                        Anticipez les tendances du marché et prenez des décisions éclairées grâce à nos modèles prédictifs avancés qui transforment vos données en insights stratégiques.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Prévision des ventes avec précision</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Identification des opportunités cachées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Optimisation des stocks et ressources</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                        En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 feature-card card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-comments text-3xl text-purple-600 feature-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Chatbots &amp; Assistants Virtuels</h3>
+                    <p class="text-gray-600 mb-6">
+                        Offrez un service client 24/7 avec nos assistants virtuels intelligents qui comprennent les nuances du langage humain et apprennent continuellement.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Réponses instantanées aux questions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Intégration omnicanale (site, réseaux sociaux)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Personnalisation avancée des interactions</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-purple-600 font-semibold hover:text-purple-800 transition-colors">
+                        En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 feature-card card-hover">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-3xl text-blue-600 feature-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Automatisation Intelligente</h3>
+                    <p class="text-gray-600 mb-6">
+                        Libérez votre équipe des tâches répétitives grâce à nos solutions d'automatisation qui s'adaptent intelligemment à vos processus d'entreprise.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Traitement automatisé des documents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Workflows adaptatifs et intelligents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Réduction de 70% des tâches manuelles</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 feature-card card-hover">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-user-friends text-3xl text-green-600 feature-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Personnalisation Client</h3>
+                    <p class="text-gray-600 mb-6">
+                        Créez des expériences sur mesure pour chaque client grâce à nos algorithmes qui analysent les comportements et préférences en temps réel.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Recommandations de produits intelligentes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Contenu dynamique adapté à l'utilisateur</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Augmentation de 45% du taux de conversion</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-green-600 font-semibold hover:text-green-800 transition-colors">
+                        En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 feature-card card-hover">
+                    <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-3xl text-red-600 feature-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Sécurité IA Avancée</h3>
+                    <p class="text-gray-600 mb-6">
+                        Protégez votre entreprise contre les menaces émergentes avec nos systèmes de sécurité adaptatifs qui détectent et neutralisent les risques en temps réel.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Détection des comportements anormaux</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Protection contre les fraudes avancées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Conformité automatisée aux réglementations</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-red-600 font-semibold hover:text-red-800 transition-colors">
+                        En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 feature-card card-hover">
+                    <div class="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-3xl text-amber-600 feature-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Analyse Visuelle &amp; NLP</h3>
+                    <p class="text-gray-600 mb-6">
+                        Exploitez le potentiel de vos données non structurées avec nos technologies de reconnaissance d'images et de traitement du langage naturel.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Analyse de sentiment des commentaires</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Reconnaissance d'objets et de scènes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Extraction intelligente d'informations</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-amber-600 font-semibold hover:text-amber-800 transition-colors">
+                        En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi Nous -->
+    <section id="pourquoi-nous" class="py-20 bg-gray-50 relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Pourquoi <span class="gradient-text">Choisir Symetrik</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Notre approche unique de l'IA combine expertise technique, compréhension métier et innovation constante pour vous garantir des résultats concrets.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1 slide-in-left">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-code text-2xl text-indigo-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Technologie Propriétaire</h3>
+                            <p class="text-gray-600">
+                                Des algorithmes développés en interne et optimisés pour vos besoins spécifiques.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-graduation-cap text-2xl text-purple-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Expertise Reconnue</h3>
+                            <p class="text-gray-600">
+                                Une équipe de data scientists et d'ingénieurs IA de renommée mondiale.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-handshake text-2xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">Accompagnement Complet</h3>
+                            <p class="text-gray-600">
+                                Du conseil stratégique à l'implémentation et au suivi des résultats.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-pie text-2xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">ROI Mesurable</h3>
+                            <p class="text-gray-600">
+                                Des indicateurs clairs pour mesurer l'impact concret sur votre activité.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+                        <div class="flex items-start">
+                            <i class="fas fa-quote-left text-4xl text-indigo-200 mr-4"></i>
+                            <div>
+                                <p class="text-gray-700 italic mb-4">
+                                    "Symetrik a transformé notre approche data en seulement 3 mois. Leur solution d'IA prédictive a augmenté nos ventes de 27% tout en réduisant nos coûts opérationnels."
+                                </p>
+                                <div class="flex items-center">
+                                    <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full mr-3" alt="CEO">
+                                    <div>
+                                        <p class="font-bold">Marie Dupont</p>
+                                        <p class="text-sm text-gray-600">Directrice Marketing, TechVision</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 slide-in-right">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl rotate-3 scale-105 opacity-20"></div>
+                        <div class="relative bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                            <h3 class="text-2xl font-bold mb-6">Nos Résultats en Chiffres</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-semibold">Augmentation de la productivité</span>
+                                        <span class="font-bold text-indigo-600 counter" data-target="42">0%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full">
+                                        <div class="h-2 bg-indigo-600 rounded-full progress-bar" style="width: 0%;" data-width="42%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-semibold">Réduction des coûts opérationnels</span>
+                                        <span class="font-bold text-purple-600 counter" data-target="31">0%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full">
+                                        <div class="h-2 bg-purple-600 rounded-full progress-bar" style="width: 0%;" data-width="31%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-semibold">Amélioration de la satisfaction client</span>
+                                        <span class="font-bold text-blue-600 counter" data-target="67">0%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full">
+                                        <div class="h-2 bg-blue-600 rounded-full progress-bar" style="width: 0%;" data-width="67%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-semibold">Précision des prévisions</span>
+                                        <span class="font-bold text-green-600 counter" data-target="94">0%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full">
+                                        <div class="h-2 bg-green-600 rounded-full progress-bar" style="width: 0%;" data-width="94%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-10 grid grid-cols-2 gap-4">
+                                <div class="bg-indigo-50 p-4 rounded-xl text-center">
+                                    <div class="text-3xl font-bold text-indigo-600 counter" data-target="500">0</div>
+                                    <p class="text-gray-700">Clients Satisfaits</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 p-4 rounded-xl text-center">
+                                    <div class="text-3xl font-bold text-purple-600 counter" data-target="1250">0</div>
+                                    <p class="text-gray-700">Projets Réalisés</p>
+                                </div>
+                                
+                                <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                    <div class="text-3xl font-bold text-blue-600 counter" data-target="25">0</div>
+                                    <p class="text-gray-700">Prix d'Innovation</p>
+                                </div>
+                                
+                                <div class="bg-green-50 p-4 rounded-xl text-center">
+                                    <div class="text-3xl font-bold text-green-600 counter" data-target="15">0</div>
+                                    <p class="text-gray-700">Années d'Expérience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Comment Ça Marche -->
+    <section id="comment-ca-marche" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Comment <span class="gradient-text">Nous Travaillons</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Notre approche méthodique garantit des solutions d'IA parfaitement adaptées à vos besoins spécifiques et à vos objectifs d'entreprise.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Ligne de connexion verticale -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-indigo-200 transform -translate-x-1/2"></div>
+                
+                <div class="space-y-12 relative">
+                    <!-- Étape 1 -->
+                    <div class="md:flex items-center fade-in-up">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                            <div class="bg-white p-6 rounded-xl shadow-md md:float-right md:max-w-md">
+                                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-lightbulb text-2xl text-indigo-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">Analyse &amp; Découverte</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Nous commençons par comprendre en profondeur vos défis, objectifs et processus actuels pour identifier les opportunités d'optimisation par l'IA.
+                                </p>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Audit complet de vos systèmes existants</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Identification des points de friction</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Évaluation de la maturité technologique</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="hidden md:flex items-center justify-center relative z-10 w-12">
+                            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xl">1</div>
+                        </div>
+                        
+                        <div class="md:w-1/2 md:pl-12 md:text-left text-center">
+                            <img src="https://fakeimg.pl/600x400/4F46E5/FFFFFF?text=Analyse" class="rounded-xl shadow-lg mx-auto md:mx-0 md:ml-auto" alt="Analyse phase">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 2 -->
+                    <div class="md:flex items-center fade-in-up">
+                        <div class="md:w-1/2 md:pr-12 md:text-right text-center mb-6 md:mb-0 md:order-2">
+                            <div class="bg-white p-6 rounded-xl shadow-md md:float-left md:max-w-md">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 md:ml-auto">
+                                    <i class="fas fa-drafting-compass text-2xl text-purple-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">Conception &amp; Stratégie</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Nous élaborons une feuille de route détaillée et une architecture de solution personnalisée qui s'aligne parfaitement avec vos objectifs commerciaux.
+                                </p>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Définition des KPIs et objectifs mesurables</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Sélection des technologies adaptées</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Création d'une roadmap d'implémentation</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="hidden md:flex items-center justify-center relative z-10 w-12 md:order-1">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl">2</div>
+                        </div>
+                        
+                        <div class="md:w-1/2 md:pl-12 md:order-0">
+                            <img src="https://fakeimg.pl/600x400/7C3AED/FFFFFF?text=Stratégie" class="rounded-xl shadow-lg mx-auto" alt="Strategy phase">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 3 -->
+                    <div class="md:flex items-center fade-in-up">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0">
+                            <div class="bg-white p-6 rounded-xl shadow-md md:float-right md:max-w-md">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                                    <i class="fas fa-code-branch text-2xl text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">Développement &amp; Intégration</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Notre équipe développe et intègre les solutions d'IA de manière transparente dans vos systèmes existants, avec des tests rigoureux à chaque étape.
+                                </p>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Développement agile et itératif</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Intégration avec vos systèmes existants</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Tests de performance et de sécurité</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="hidden md:flex items-center justify-center relative z-10 w-12">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl">3</div>
+                        </div>
+                        
+                        <div class="md:w-1/2 md:pl-12 md:text-left text-center">
+                            <img src="https://fakeimg.pl/600x400/3B82F6/FFFFFF?text=Développement" class="rounded-xl shadow-lg mx-auto md:mx-0 md:ml-auto" alt="Development phase">
+                        </div>
+                    </div>
+                    
+                    <!-- Étape 4 -->
+                    <div class="md:flex items-center fade-in-up">
+                        <div class="md:w-1/2 md:pr-12 md:text-right text-center mb-6 md:mb-0 md:order-2">
+                            <div class="bg-white p-6 rounded-xl shadow-md md:float-left md:max-w-md">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 md:ml-auto">
+                                    <i class="fas fa-rocket text-2xl text-green-600"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3">Déploiement &amp; Optimisation Continue</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Nous assurons un lancement réussi suivi d'une optimisation continue basée sur les données réelles et les retours d'utilisation.
+                                </p>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Déploiement progressif et sécurisé</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Formation et accompagnement des équipes</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                        <span>Amélioration continue basée sur les données</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="hidden md:flex items-center justify-center relative z-10 w-12 md:order-1">
+                            <div class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-xl">4</div>
+                        </div>
+                        
+                        <div class="md:w-1/2 md:pl-12 md:order-0">
+                            <img src="https://fakeimg.pl/600x400/10B981/FFFFFF?text=Déploiement" class="rounded-xl shadow-lg mx-auto" alt="Deployment phase">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#contact" class="btn-primary text-white px-8 py-4 rounded-full font-bold text-lg inline-block">
+                    Démarrer votre projet <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Cas Clients -->
+    <section id="cas-clients" class="py-20 bg-gray-50 relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Histoires de <span class="gradient-text">Réussite</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez comment nos solutions d'IA ont transformé des entreprises comme la vôtre et généré des résultats concrets.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden testimonial-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://fakeimg.pl/600x400/4F46E5/FFFFFF?text=TechVision" class="w-full h-full object-cover" alt="TechVision Case Study">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full mr-3" alt="Client Logo">
+                            <div>
+                                <h3 class="font-bold">TechVision</h3>
+                                <p class="text-sm text-gray-600">E-commerce</p>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Personnalisation Client par IA</h4>
+                        <p class="text-gray-600 mb-4">
+                            Implémentation d'un système de recommandation personnalisé qui a augmenté le panier moyen de 34% et le taux de conversion de 27%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Personnalisation</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Machine Learning</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-green-600 font-bold">+34%</span>
+                                <span class="text-gray-600 text-sm ml-1">de CA</span>
+                            </div>
+                            <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                Lire l'étude de cas <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden testimonial-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://fakeimg.pl/600x400/7C3AED/FFFFFF?text=FinancePlus" class="w-full h-full object-cover" alt="FinancePlus Case Study">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full mr-3" alt="Client Logo">
+                            <div>
+                                <h3 class="font-bold">FinancePlus</h3>
+                                <p class="text-sm text-gray-600">Services Financiers</p>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Détection de Fraude Avancée</h4>
+                        <p class="text-gray-600 mb-4">
+                            Système d'IA qui a réduit les faux positifs de 67% tout en améliorant la détection des fraudes réelles de 41%, économisant 2,3M€ annuels.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Sécurité</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Deep Learning</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Finance</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-green-600 font-bold">2,3M€</span>
+                                <span class="text-gray-600 text-sm ml-1">d'économies</span>
+                            </div>
+                            <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                Lire l'étude de cas <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden testimonial-card">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://fakeimg.pl/600x400/F59E0B/FFFFFF?text=LogiPro" class="w-full h-full object-cover" alt="LogiPro Case Study">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img src="https://fakeimg.pl/60x60/cccccc/909090" class="w-10 h-10 rounded-full mr-3" alt="Client Logo">
+                            <div>
+                                <h3 class="font-bold">LogiPro</h3>
+                                <p class="text-sm text-gray-600">Logistique &amp; Transport</p>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Optimisation de la Chaîne Logistique</h4>
+                        <p class="text-gray-600 mb-4">
+                            Algorithmes prédictifs qui ont optimisé les itinéraires et la gestion des stocks, réduisant les coûts de 29% et les délais de livraison de 42%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Optimisation</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Prédictif</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Logistique</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-green-600 font-bold">-29%</span>
+                                <span class="text-gray-600 text-sm ml-1">de coûts</span>
+                            </div>
+                            <a href="#" class="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                                Lire l'étude de cas <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div class="md:col-span-1">
+                            <img src="https://fakeimg.pl/400x400/4F46E5/FFFFFF?text=Témoignage" class="rounded-xl shadow-md mx-auto" alt="Testimonial">
+                        </div>
+                        <div class="md:col-span-2">
+                            <i class="fas fa-quote-left text-5xl text-indigo-200 mb-4"></i>
+                            <p class="text-xl text-gray-700 italic mb-6">
+                                "Symetrik a révolutionné notre façon d'aborder l'intelligence artificielle. Leur équipe a su comprendre nos enjeux métier et proposer des solutions concrètes qui ont généré un impact immédiat. La transformation a été spectaculaire, avec une adoption rapide par nos équipes et des résultats qui ont dépassé nos attentes les plus optimistes."
+                            </p>
+                            <div class="flex items-center">
+                                <img src="https://fakeimg.pl/80x80/cccccc/909090" class="w-14 h-14 rounded-full mr-4" alt="CEO">
+                                <div>
+                                    <p class="font-bold text-lg">Jean-Philippe Martin</p>
+                                    <p class="text-gray-600">Directeur de l'Innovation, Groupe Horizon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tarifs -->
+    <section id="tarifs" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Nos <span class="gradient-text">Offres</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Des solutions flexibles et évolutives pour répondre aux besoins de toutes les entreprises, quelle que soit leur taille ou leur secteur.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-center">
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 pricing-card md:w-1/3">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-rocket text-2xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Essentiel</h3>
+                        <p class="text-gray-600">Pour les startups et petites entreprises</p>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold">1 490€</span>
+                        <span class="text-gray-600">/mois</span>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>2 modules IA au choix</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Jusqu'à 50 000 prédictions/mois</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Intégration API standard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Support par email</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Tableau de bord basique</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-times-circle mt-1 mr-2"></i>
+                            <span>Personnalisation avancée</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-times-circle mt-1 mr-2"></i>
+                            <span>Conseiller dédié</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="block text-center bg-gray-100 hover:bg-gray-200 text-indigo-600 font-bold py-3 rounded-lg transition-colors">
+                        Commencer l'essai gratuit
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 pricing-card md:w-1/3 md:scale-105 relative z-10">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-black font-semibold px-4 py-1 rounded-bl-lg rounded-tr-lg text-sm">
+                        POPULAIRE
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-crown text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1 text-white">Business</h3>
+                        <p class="text-indigo-100">Pour les entreprises en croissance</p>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-white">3 990€</span>
+                        <span class="text-indigo-100">/mois</span>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-white">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>5 modules IA au choix</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>Jusqu'à 250 000 prédictions/mois</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>Intégration API avancée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>Support prioritaire 7j/7</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>Tableau de bord avancé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>Personnalisation standard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-300 mt-1 mr-2"></i>
+                            <span>Réunion mensuelle de suivi</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="block text-center bg-white text-indigo-600 font-bold py-3 rounded-lg transition-all hover:bg-opacity-90">
+                        Obtenir un devis personnalisé
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 pricing-card md:w-1/3">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-building text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Entreprise</h3>
+                        <p class="text-gray-600">Pour les grandes organisations</p>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold">Sur mesure</span>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Modules IA illimités</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Volume illimité de prédictions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Intégration sur mesure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Support dédié 24/7</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Tableau de bord personnalisé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Personnalisation complète</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Équipe dédiée</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#contact" class="block text-center bg-gray-100 hover:bg-gray-200 text-purple-600 font-bold py-3 rounded-lg transition-colors">
+                        Contacter l'équipe commerciale
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gray-50 rounded-xl p-8 shadow-md">
+                <h3 class="text-2xl font-bold mb-6 text-center">Questions Fréquentes sur nos Offres</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="faq-item p-4 rounded-lg">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-question-circle text-indigo-600 mr-2"></i>
+                            Puis-je changer d'offre à tout moment ?
+                        </h4>
+                        <p class="text-gray-600">
+                            Oui, vous pouvez passer à une offre supérieure à tout moment. Le passage à une offre inférieure est possible à la fin de votre période d'engagement.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item p-4 rounded-lg">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-question-circle text-indigo-600 mr-2"></i>
+                            Quelle est la durée d'engagement ?
+                        </h4>
+                        <p class="text-gray-600">
+                            Nos offres sont disponibles avec un engagement mensuel ou annuel. Un engagement annuel vous permet de bénéficier de 2 mois gratuits.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item p-4 rounded-lg">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-question-circle text-indigo-600 mr-2"></i>
+                            Comment fonctionne l'essai gratuit ?
+                        </h4>
+                        <p class="text-gray-600">
+                            L'essai gratuit dure 14 jours et vous donne accès à toutes les fonctionnalités de l'offre Essentiel. Aucune carte bancaire n'est requise pour commencer.
+                        </p>
+                    </div>
+                    
+                    <div class="faq-item p-4 rounded-lg">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-question-circle text-indigo-600 mr-2"></i>
+                            Proposez-vous des remises pour les startups ?
+                        </h4>
+                        <p class="text-gray-600">
+                            Oui, nous avons un programme spécial pour les startups qui offre jusqu'à 40% de réduction sur nos offres pendant la première année.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section id="faq" class="py-20 bg-gray-50 relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Questions <span class="gradient-text">Fréquentes</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Tout ce que vous devez savoir sur nos solutions d'IA et comment elles peuvent transformer votre entreprise.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md p-6 faq-item">
+                    <h3 class="text-xl font-bold mb-3">Qu'est-ce que l'IA peut apporter concrètement à mon entreprise ?</h3>
+                    <p class="text-gray-600">
+                        L'IA peut transformer votre entreprise de multiples façons : automatisation des tâches répétitives, analyse prédictive pour anticiper les tendances, personnalisation de l'expérience client, optimisation des opérations, détection des anomalies et fraudes, et bien plus. Chaque entreprise bénéficie différemment de l'IA selon ses besoins spécifiques.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 faq-item">
+                    <h3 class="text-xl font-bold mb-3">Combien de temps faut-il pour implémenter une solution d'IA ?</h3>
+                    <p class="text-gray-600">
+                        La durée d'implémentation varie selon la complexité du projet. Nos solutions modulaires peuvent être déployées en 2-4 semaines pour les cas d'usage simples. Les projets plus complexes nécessitant une personnalisation avancée peuvent prendre 2-3 mois. Nous privilégions une approche agile avec des livrables intermédiaires rapides.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 faq-item">
+                    <h3 class="text-xl font-bold mb-3">Faut-il disposer de grandes quantités de données pour commencer ?</h3>
+                    <p class="text-gray-600">
+                        Pas nécessairement. Bien que plus de données permettent généralement de meilleurs résultats, nous pouvons commencer avec des ensembles de données limités. Nos modèles sont conçus pour s'améliorer progressivement avec le temps. Pour certains cas d'usage, nous pouvons également utiliser des modèles pré-entraînés qui requièrent moins de données initiales.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 faq-item">
+                    <h3 class="text-xl font-bold mb-3">Comment garantissez-vous la sécurité et la confidentialité des données ?</h3>
+                    <p class="text-gray-600">
+                        La sécurité est notre priorité absolue. Nous utilisons des protocoles de chiffrement avancés, des environnements isolés, et respectons toutes les réglementations (RGPD, etc.). Vos données ne sont jamais partagées et restent votre propriété. Nous proposons également des solutions sur site pour les entreprises ayant des exigences de sécurité particulièrement élevées.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 faq-item">
+                    <h3 class="text-xl font-bold mb-3">Quelle formation est nécessaire pour utiliser vos solutions ?</h3>
+                    <p class="text-gray-600">
+                        Nos interfaces sont conçues pour être intuitives et accessibles aux non-spécialistes. Chaque déploiement inclut une formation adaptée aux utilisateurs finaux. Pour les offres Business et Entreprise, nous proposons des programmes de formation plus approfondis pour maximiser la valeur de nos solutions et développer les compétences IA au sein de votre organisation.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 faq-item">
+                    <h3 class="text-xl font-bold mb-3">Comment mesurer le retour sur investissement (ROI) de l'IA ?</h3>
+                    <p class="text-gray-600">
+                        Nous définissons ensemble des indicateurs clés de performance (KPIs) dès le début du projet. Notre tableau de bord permet de suivre ces métriques en temps réel. Typiquement, nos clients constatent un ROI dans les 3 à 6 mois suivant le déploiement, avec des gains d'efficacité de 20-40%, une réduction des coûts de 15-30% ou une augmentation des revenus de 10-25% selon les cas d'usage.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-4">Vous avez d'autres questions ?</p>
+                <a href="#contact" class="inline-flex items-center text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                    Contactez notre équipe <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="slide-in-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Prêt à <span class="gradient-text">Transformer</span> votre entreprise avec l'IA ?
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Contactez-nous dès aujourd'hui pour discuter de vos besoins spécifiques et découvrir comment nos solutions d'IA peuvent propulser votre croissance.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Adresse</h3>
+                                <p class="text-gray-600">
+                                    42 Avenue de l'Innovation<br>
+                                    75008 Paris, France
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-phone-alt text-xl text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Téléphone</h3>
+                                <p class="text-gray-600">
+                                    +33 (0)1 23 45 67 89
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-envelope text-xl text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-1">Email</h3>
+                                <p class="text-gray-600">
+                                    contact@symetrik.xyz
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="slide-in-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                        <h3 class="text-2xl font-bold mb-6">Demander une Démo</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                                </div>
+                                
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Entreprise</label>
+                                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email professionnel</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Je suis intéressé(e) par</label>
+                                <select id="interest" name="interest" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                                    <option value="" selected="" disabled="">Sélectionnez une option</option>
+                                    <option value="analytics">IA Analytique Prédictive</option>
+                                    <option value="chatbot">Chatbots &amp; Assistants Virtuels</option>
+                                    <option value="automation">Automatisation Intelligente</option>
+                                    <option value="personalization">Personnalisation Client</option>
+                                    <option value="security">Sécurité IA Avancée</option>
+                                    <option value="vision">Analyse Visuelle &amp; NLP</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message (optionnel)</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"></textarea>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <input type="checkbox" id="consent" name="consent" class="mt-1 mr-2">
+                                <label for="consent" class="text-sm text-gray-600">
+                                    J'accepte de recevoir des communications de Symetrik. Je comprends que je peux me désabonner à tout moment.
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg font-bold text-lg">
+                                Demander une Démo
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Newsletter -->
+    <section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Restez à la Pointe de l'Innovation</h2>
+                <p class="text-xl text-indigo-100 mb-8">
+                    Abonnez-vous à notre newsletter pour recevoir les dernières tendances, conseils et études de cas sur l'IA appliquée au monde de l'entreprise.
+                </p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                    <input type="email" placeholder="Votre email professionnel" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-6 py-3 rounded-lg transition-colors">
+                        S'abonner
+                    </button>
+                </form>
+                
+                <p class="text-indigo-200 text-sm mt-4">
+                    Nous respectons votre vie privée. Désabonnez-vous à tout moment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <span class="text-3xl font-extrabold text-white">Symetrik<span class="text-yellow-400">.xyz</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Transformez votre entreprise avec des solutions d'intelligence artificielle innovantes et sur mesure.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Solutions</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">IA Analytique Prédictive</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Chatbots &amp; Assistants Virtuels</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Automatisation Intelligente</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Personnalisation Client</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sécurité IA Avancée</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Analyse Visuelle &amp; NLP</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Entreprise</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Équipe</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Carrières</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Études de cas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Presse</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Centre d'aide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Statut du service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 mb-4 md:mb-0">
+                        © 2025 Symetrik Technologies. Tous droits réservés.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">Conditions d'utilisation</a>
+                        <a href="#" class="text-gray-500 hover:text-white transition-colors">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton de retour en haut -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-indigo-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-50 opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observer pour les éléments avec animation au défilement
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animer les barres de progression
+                        if (entry.target.classList.contains('progress-bar')) {
+                            const width = entry.target.getAttribute('data-width');
+                            entry.target.style.width = width;
+                        }
+                        
+                        // Animer les compteurs
+                        if (entry.target.classList.contains('counter')) {
+                            const target = parseInt(entry.target.getAttribute('data-target'));
+                            const duration = 2000; // ms
+                            const step = target / (duration / 16);
+                            let current = 0;
+                            const timer = setInterval(() => {
+                                current += step;
+                                if (current >= target) {
+                                    clearInterval(timer);
+                                    current = target;
+                                }
+                                
+                                // Ajouter le symbole % si nécessaire
+                                if (entry.target.textContent.includes('%')) {
+                                    entry.target.textContent = Math.floor(current) + '%';
+                                } else {
+                                    entry.target.textContent = Math.floor(current);
+                                }
+                            }, 16);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observer tous les éléments avec classe fade-in-up
+            document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .progress-bar, .counter').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Bouton retour en haut
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Fermer le menu mobile si ouvert
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Défilement avec offset pour la navbar fixe
+                    const navbarHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Effet de survol pour les cartes
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+            });
+        });
+    </script>
+</body>
+</html>
